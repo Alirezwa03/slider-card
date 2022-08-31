@@ -27,7 +27,6 @@ const ItemDiv = styled.div`
     }
   }
 
-
   p {
     font-size: 1.2rem;
     opacity: .7;
@@ -35,22 +34,23 @@ const ItemDiv = styled.div`
     padding: 0 5px 20px;
   }
 
-
   &:nth-child(${(props) => props.num}) {
     animation: rotate ease .4s forwards;
   }
 
-  &:nth-child(${(props) => {
-        if (props.lenght === props.num) {
-          return 2;
-        } else if (props.num === 1)  {
-          return 3
-        }
-        else {
-          return props.num - 1;
-        }
-      }}) {
-    animation: rotateBefore ease .4s forwards;
+  &:nth-child(${(props) =>
+        props.arrow
+          ? props.num === props.lenght
+            ? props.lenght - 1
+            : props.num === 1
+            ? props.lenght
+            : props.num - 1
+          : props.lenght === props.num
+          ? 1
+          : props.num === 1
+          ? props.num + 1
+          : props.num + 1}) {
+    animation: rotateBefore ease 0.4s forwards;
   }
 
   @keyframes rotate {
@@ -111,10 +111,10 @@ const ItemDiv = styled.div`
   }
 `;
 
-const SliderItem = ({ name, number, dataLenght, text }) => {
+const SliderItem = ({ name, number, dataLenght, text, arrow }) => {
   return (
     <>
-      <ItemDiv num={number} lenght={dataLenght}>
+      <ItemDiv num={number} lenght={dataLenght} arrow={arrow}>
         <h1>{name}</h1>
         <p>{text}</p>
       </ItemDiv>
