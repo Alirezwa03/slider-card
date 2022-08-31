@@ -1,0 +1,27 @@
+.containr {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+ 
+
+  .buttonContainer {
+    margin-top: 100px;
+
+    @media screen and (max-width: 530px) {
+      margin-top: 140px;
+    }
+    
+    button {
+      margin: 0 5px;
+      border: none;
+      background: none;
+      font-size: 1.8rem;
+      
+      @media screen and (min-width: 660px) {
+        cursor: pointer;
+      }
+    }
+  }
+}
