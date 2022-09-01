@@ -54,15 +54,15 @@ const ShowItem = styled.div`
 const Slider = () => {
   const data = [
     {
-      name: 'Titel - 1',
+      name: 'Title - 1',
       text: 'description'
     }, 
     {
-      name: 'Titel - 2',
+      name: 'Title - 2',
       text: 'description'
     }, 
     {
-      name: 'Titel - 3',
+      name: 'Title - 3',
       text: 'description'
     }, 
   ];
