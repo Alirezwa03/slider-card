@@ -73,6 +73,7 @@ const Slider = () => {
   console.log(number);
 
   const numLowHandler = () => {
+    setArrow(false)
     if (number > data.length) {
       setNumber(1);
     } else if (number <= 1) {
@@ -80,17 +81,16 @@ const Slider = () => {
     } else {
       setNumber((prevState) => prevState - 1);
     }
-    setArrow(false)
   };
 
   const numPlusHandler = () => {
+    setArrow(true)
     if (number >= data.length) {
       setNumber(1);
     } else if (number <= 0) {
       setNumber(data.length);
     } else {
       setNumber((prevState) => prevState + 1);
-      setArrow(true)
     }
   };
 
